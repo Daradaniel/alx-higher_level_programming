@@ -9,13 +9,14 @@ class Rectangle:
     the class defines the height and width prived
     instance attributes, getter and setter method for each.
     __repr__ to be print with print() and str()
-    __del__ method implementation
-    number_of_instances.
+    __del__ method implementation, public class attribute
+    number_of_instances, public class attribute print_symbol..
     """
 
     number_of_instances = 0
 
     def __init__(self, width=0, height=0):
+        Rectangle.number_of_instances += 1
         if type(height) != int:
             raise TypeError("height must be an integer")
         elif height < 0:
