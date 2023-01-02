@@ -8,7 +8,7 @@ class Rectangle:
     """class rectangle.
     the class defines the height and width prived
     instance attributes, getter and setter method for each.
-    area and permiter methods,  __str__ implementation
+    __repr__ to be print with print() and str()
     """
 
     def __init__(self, width=0, height=0):
@@ -27,12 +27,23 @@ class Rectangle:
 
     def area(self):
         return (self.width * self.height)
-
+        
     def perimeter(self):
         if (self.height == 0 or self.width == 0):
             return 0
         else:
             return 2 * self.height + 2 * self.width
+        
+    def __str__(self):
+        if (self.height != 0 and self.width != 0):
+            a = self.width * "#" + "\n"
+            b = self.width * "#"
+            return ((self.height - 1) * a + b)
+        else:
+            return ("")
+
+    def __repr__(self):
+        return "Rectangle({}, {})".format(self.width, self.height)
 
     @property
     def width(self):
